@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Manrope", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Reusable CSS Classes */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  gap: 1em;
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns of equal width */
+  column-gap: 80px;
+}
+
+.author {
+  margin-top: 1.5em;
+}
+
+.author img {
+  width: 40px;
+}
+
+.author a {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+p {
+  color: grey;
+}
+
+img {
+  width: 110%;
+}
+
+/* Nav */
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.primary-navigation {
+  list-style: none;
+  margin-inline-end: 1em;
+  padding: 0;
+}
+
+.nav-toggle{
+  display: none;
+}
+
+
+/* Main Article */
+.first {
+  margin-top: 50px;
+}
+
+.main-article {
+  grid-column: 2 / -1;
+}
+
+.article-text h1 {
+  font-size: 35px;
+}
+
+.article-text p {
+  margin-top: 0.75em;
+  line-height: 1.2;
+  font-size: 17px;
+  max-width: 65ch;
+}
+
+/* Other artcles */
+
+.other-articles {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.other-articles .grid-3-cols {
+  column-gap: 60px;
+}
+
+.article img {
+  width: 100%;
+}
+
+.article h2 {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.article .author {
+  margin-top: 1em;
+}
+.article .author img {
+  width: 40px;
+}
+
+/* Footer */
+
+.footer-content {
+  justify-content: space-between;
+}
+
+/* Media Queries */
+
+@media (max-width: 862px){
+
+  .logo{
+      color: whitesmoke;
+  }
+  .primary-navigation{
+      z-index: 1000;
+      gap: 3em;
+      position: fixed;
+      inset: 7% 0 30% -10%;
+      border-bottom-left-radius: 30%;
+      flex-direction: column;
+      padding: min(30vh, 10rem) 3rem;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(20px) saturate(100%) contrast(45%) brightness(130%);
+      transform: translateX(110%);
+      transition: transform 0.5s ease-in;
+  }
+
+  .primary-navigation a{
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 17px;
+  }
+
+  .primary-navigation[data-visible="true"]{
+      transform: translateX(10%);
+  }
+
+  .nav-toggle{
+      display: block;
+      position: absolute;
+      width: 2rem;
+      aspect-ratio: 1;
+      background: url(menu.svg);
+      border: none;
+      top: 1rem;
+      right: 1rem;
+      z-index: 9999;
+  }
+}
+
+@media (max-width: 635px){
+
+  img{
+    width: 100%;
+  }
+  .container{
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+  }
+
+  .first .grid-3-cols{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-3-cols{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .main-article .author img {
+    width: 45px;
+    margin-bottom: 1.3em;
+  }
+
+  .article .author img {
+    width: 45px;
+    margin-bottom: 1.3em;
+  }
+
+  .name{
+    margin-bottom: 1.3em;
+  }
+}
+
+@media (max-width: 1024px){
+  .container{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .article-text h1 {
+    font-size: 23px;
+  }
+}
+
+
+
+
